@@ -1,5 +1,5 @@
-/*
 
+/*
 Part 1: Debugging Challenge
 The JavaScript code below contains intentional bugs related to type conversion.
 Please do the following:
@@ -15,7 +15,6 @@ Write their own code that demonstrates:
   *We encourage you to:
 Include at least one edge case, like NaN, undefined, or null .
 Use console.log() to clearly show the before-and-after type conversions.
-
 */
 
 
@@ -32,10 +31,12 @@ if (isValid) {
 }
 
 let age = "25";
-console.log(typeof age);  //prints the current data type of the variable "age"
-let numAge = Number(age);  //explicity convert the variable "age" from string to a number
-console.log(typeof numAge)  //prints the current data type of the converted variable "age" to "numAge"
-let totalAge = numAge + 5;  //uses converted datatype version of "age" in the calculation
+let totalAge = Number(age) + 5; // Fix: Convert age to a number before adding so that 5 is not converted to a string (otherwise theoutput would be: Total Age: 255)
 console.log("Total Age: " + totalAge);
 
 
+let thisExample = "";
+if (Boolean(thisExample))
+  { console.log("You will see this execute."); }
+else
+  { console.log("No, this will not execute."); }
